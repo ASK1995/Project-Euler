@@ -1,0 +1,9 @@
+current, next = 0, 1
+total = 0
+
+while(current <= 4000000):
+	current, next = next, current + next
+	if(current % 2 == 0):
+		total += current
+
+print(total)

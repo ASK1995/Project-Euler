@@ -1,0 +1,18 @@
+def palindrome(n):
+	l = ""
+	while(n != 0):
+		l += (str(n%10))
+		n = n//10
+	if(l == l[::-1]):
+		return True
+	return False
+
+m1, m2, largest = 0, 0, 0
+for multiplier1 in range(999, 99, -1):
+	print(multiplier1)
+	for multiplier2 in range(999, 99, -1):
+		if(palindrome(multiplier1 * multiplier2)):
+			if(multiplier1*multiplier2 >= largest):
+				m1, m2, largest = multiplier1, multiplier2, multiplier1*multiplier2
+
+print(m1, m2, largest)

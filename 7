@@ -1,0 +1,19 @@
+primes = [2, 3, 5]
+
+def prime_generator():
+	for number in range(7, 100000000, 2):
+		is_prime = True
+		
+		for prime in primes:
+			if(number % prime == 0):
+				is_prime = False
+				break
+		if(is_prime):
+			primes.append(number)
+		if(len(primes) == 10001):
+			print(number)
+			break
+
+import math
+
+prime_generator()
