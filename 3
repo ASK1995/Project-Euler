@@ -1,0 +1,23 @@
+primes = [3, 5]
+
+def prime_generator(n):
+	for number in range(7, n, 2):
+		is_prime = True
+		
+		for prime in primes:
+			if(number % prime == 0):
+				is_prime = False
+				break
+		if(is_prime):
+			primes.append(number)
+
+import math
+
+root = math.ceil(math.sqrt(600851475143))
+prime_generator(root)
+
+largest_prime_divider = 1
+for divisor in primes[::-1]:
+	if(600851475143 % divisor == 0):
+		print(divisor)
+		break

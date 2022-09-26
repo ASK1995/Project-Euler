@@ -1,0 +1,32 @@
+from collections import defaultdict
+
+primes = [2, 3, 5]
+
+d = defaultdict(lambda: False)
+
+def prime_generator():
+	for number in range(7, 1000000, 2):
+		is_prime = True
+		if(number % 3 == 0 or number % 5 == 0):
+			continue
+		for prime in primes:
+			if(number % prime == 0):
+				is_prime = False
+				break
+		if(is_prime):
+			primes.append(number)
+		print(number)
+
+def sum_generator():
+	i, total, largest = 0, 0, 2
+	while(total < 1000000):
+		total += primes[i]
+		if(total in set_primes):
+			largest = total
+		i += 1
+	print(largest)
+
+prime_generator()
+set_primes = set(primes)
+print("DONE")
+sum_generator()

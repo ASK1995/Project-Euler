@@ -1,0 +1,19 @@
+def gcd(a, b):
+	while(b != 1):
+		if (a % b == 0):
+			return b
+		a, b = b, a%b
+	return 1
+
+result = 2
+
+for number in range(3, 21):
+	if(gcd(result, number) == 1):
+		result *= number
+	elif(gcd(result,number) == number):
+		continue
+	else:
+		result *= gcd(result, number)
+	print(result)
+
+print(result)
